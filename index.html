@@ -28,6 +28,22 @@
     <!-- Google AdSense -->
     <script data-ad-client="ca-pub-2077647935292580" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+          // REMOVE THIS - just showing the redirect route in the UI
+          document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
+        }
+        else {
+          // REMOVE THIS - just showing the redirect route in the UI
+          document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
+        }
+      })();
+    </script>
+
     <base href="/">
     <meta charset="utf-8" />
     <meta
