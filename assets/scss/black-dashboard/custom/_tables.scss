@@ -160,6 +160,11 @@
   padding-bottom: 10px;
 }
 
+.table td {
+  min-width: 12em;
+  text-align: center;
+}
+
 #tables .table-responsive{
     margin-bottom: 30px;
 }
